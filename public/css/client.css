@@ -1,0 +1,70 @@
+label {
+    font-weight: 550;
+}
+
+.show {
+    display: none;
+}
+
+.list_title {
+    height: 100px;
+    background-color: #457ceb;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 160px;
+    position: relative;
+}
+
+.list_title h2 {
+    font-weight: bold;
+}
+
+.list_icon {
+    width: 50px;
+    position: absolute;
+    left: 100px;
+    bottom: -25px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 47, 116);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.list_icon:hover {
+    box-shadow: 1px 2px 5px rgb(181, 181, 181), 1px 2px 5px rgb(181, 181, 181);
+}
+
+.list_icon a {
+    font-size: 20px;
+    padding: 15px;
+    color: white;
+}
+
+.list_icon a:hover {
+    color: white;
+}
+
+.listMain,
+.listMain table {
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.listMain .table td {
+    font-size: 14px;
+}
+
+.listMain .table td i {
+    font-size: 11px;
+    cursor: pointer;
+    color: rgb(80, 147, 255);
+}
+
+.listMain .table tr {
+    cursor: pointer;
+}
