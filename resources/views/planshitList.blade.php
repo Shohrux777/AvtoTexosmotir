@@ -17,7 +17,7 @@
                             <th>Davlat raqami</th>
                             <th>Telefon nomeri</th>
                             <th style="width: 50px;">Sms</th>
-                            <th>Prin</th>
+                            <th>Write</th>
                         </tr>
                         <tr>
                             <th></th>

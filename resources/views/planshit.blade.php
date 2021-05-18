@@ -1,16 +1,15 @@
 @extends('bootstrap')
+<link rel="stylesheet" href="css/client.css">
+<script src="js/client.js"></script>
     <x-app-layout>
-    <!-- <x-slot name="header">
-        <!-- it header navigator -->
-    </x-slot> -->
 
     <div class="">
+        <div class="list_title ">
+            <h2>Planshit send</h2>
+        </div>
         <div class="">
             <div class="bg-white overflow-hidden shadow-xl ">
             <div class="p-3 max-w-7xl mx-auto mb-5"  >
-                <div class="title mb-5">
-                    <h4 style="font-family: 'PT Sans', sans-serif;">Planshit sahifa</h4>
-                </div>
                 <div  class="my-5">
                     <div class="row">
                         <div class="col-3">
