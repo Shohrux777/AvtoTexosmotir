@@ -2,17 +2,15 @@
 <link rel="stylesheet" href="css/client.css">
 <script src="js/client.js"></script>
     <x-app-layout>
-    <!-- <x-slot name="header">
-        <!-- it header navigator -->
-    </x-slot> -->
 
     <div class="">
+        <div class="list_title ">
+            <h2>Create client</h2>
+        </div>
         <div class="">
-            <div class="bg-white overflow-hidden shadow-xl">
+            <div class="bg-white pt-5 overflow-hidden shadow-xl">
             <form class="p-3 max-w-7xl mx-auto" style="height: 100vh;" >
-                <div class="title " style="margin-bottom: 70px;">
-                    <h1>Create Clients</h1>
-                </div>
+
                 <div class="row">
                     <div class="col-1">
                     <label for="exampleFormControlInput1" class="form-label m-0 p-0">Code</label>

@@ -4,9 +4,9 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
+                <div class="flex-shrink-0 d-flex align-items-center">
                     <a href="{{ route('dashboard') }}">
-                        <h1 style="font-size:30px;">AvtoTex</h1>
+                        <h1 style="font-size:38px;" class="logo_avto pt-2">AvtoTex</h1>
                         <!-- <x-jet-application-mark class="block h-9 w-auto" /> -->
                     </a>
                 </div>
