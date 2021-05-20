@@ -46,20 +46,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach($clients as $client)
                     <tr>
-                            <th>1</th>
-                            <td>1036/2021</td>
-                            <td>Сейитназаров Хайрулла</td>
-                            <td>Кирккиз ОФЙ</td>
-                            <td>95L998CA</td>
-                            <td>99-944-46-02</td>
-                            <td>0</td>
-                            <td>
-                            <i class="fas fa-eye"></i>
-                            <i class="fas fa-print"></i>
-                            <i class="fas fa-pen"></i>
-                            </td>
-                        </tr>
+                        <th>{{$client['id']}}</th>
+                        <td>{{$client['code']}}/2021</td>
+                        <td>{{$client['name']}}</td>
+                        <td>{{$client['manzil']}}</td>
+                        <td>{{$client['d_raqami']}}</td>
+                        <td>{{$client['t_number']}}</td>
+                        <td>none</td>
+                        <td>
+                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-print"></i>
+                        <a href="/editClient/{{$client->id}}"><i class="fas fa-pen"></i></a>
+                        </td>
+                    </tr>
+                    @endforeach
                         <tr>
                             <th>2</th>
                             <td>1037/2021</td>
