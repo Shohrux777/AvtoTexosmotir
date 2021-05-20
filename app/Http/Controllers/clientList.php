@@ -15,6 +15,19 @@ class clientList extends Controller
         $edit = listofclient::all()-> where('id', $id)->first();
         return view('clientEdit', ['edits'=>$edit]);
     }
+    function deleteClient($id){
+        $del = listofclient::find($id);
+        $del ->delete();
+        return redirect('clientList');
+    }
+    function printClient($id){
+        $data = listofclient::find($id);
+        return view('clientPrint', ['prints'=>$data]);
+    }
+    function showClient($id){
+        $show = listofclient::all()-> where('id', $id)->first();
+        return view('clientShow', ['shows'=>$show]);
+    }
     function updateClint(Request $request){
         $query = DB::table('client')->where('id', $request->id)->update([
             'code'=>$request->input('code'),
@@ -43,10 +56,13 @@ class clientList extends Controller
 
         ]);
         if($query){
-            return back() ->with('success','Malumot ');
+            return redirect('clientList');
+
         }
         else{
             return back() ->with('fail','Something went wrong');
         }
+
+
     }
 }

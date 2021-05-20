@@ -32,7 +32,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/planshit', function () {
 })->name('planshit');
 Route::middleware(['auth:sanctum', 'verified'])->get('/clientList', [clientList::class,'list'])->name('clientList');
 Route::middleware(['auth:sanctum', 'verified'])->get('editClient/{id}', [clientList::class, 'EditClient']);
-Route::middleware(['auth:sanctum', 'verified'])->post('update_client', [clientList::class, 'updateClint']);
+Route::middleware(['auth:sanctum', 'verified'])->get('delete/{id}', [clientList::class, 'deleteClient']);
+Route::middleware(['auth:sanctum', 'verified'])->get('print/{id}', [clientList::class, 'printClient']);
+Route::middleware(['auth:sanctum', 'verified'])->get('showClients/{id}', [clientList::class, 'showClient']);
+Route::middleware(['auth:sanctum', 'verified'])->post('edit', [clientList::class, 'updateClint']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/planshitList', function () {
     return view('planshitList');

@@ -20,9 +20,8 @@
                 </div>
             @endif
             <div class="bg-white pt-5 overflow-hidden shadow-xl">
-            <form action="update_client" method="post" class="p-3 max-w-7xl mx-auto" style="height: 100vh;" >
-
-            @csrf
+            <form action="/edit" method="post" class="p-3 max-w-7xl mx-auto" style="height: 100vh;" >
+                @csrf
                 <input type="hidden" value="{{$edits->id}}" name="id">
                 <div class="row">
                     <div class="col-1">
@@ -70,7 +69,7 @@
                     <div class="col-3">
                         <label for="avtamobil_turi" class="form-label m-0 p-0">Avtomobil turi</label>
                         <select class="form-select"  name="avto_turi" aria-label="Default select example">
-                        <option selected>{{$edits->avto_turi}}</option>
+                        <option hidden selected>{{$edits->avto_turi}}</option>
                         <option value="one">One</option>
                         <option value="two">Two</option>
                         <option value="three">Three</option>
@@ -82,7 +81,7 @@
                     <div class="col-3">
                         <label for="rusumi" class="form-label m-0 p-0">Rusumi</label>
                         <select class="form-select" name="rusumi" aria-label="Default select example">
-                        <option selected>{{$edits->rusumi}}</option>
+                        <option hidden selected>{{$edits->rusumi}}</option>
                         <option value="malibu">Malibu</option>
                         <option value="Nexia 2">Nexia 2</option>
                         <option value="Spark">Spark</option>
@@ -112,7 +111,7 @@
                     <div class="col-3">
                         <label for="yoqilgi_turi" class="form-label m-0 p-0">Yoqilgi turi</label>
                         <select class="form-select" name="yoqilgi_turi" id="oil" onchange="get_oil()">
-                        <option selected>{{$edits->yoqilgi_turi}}</option>
+                        <option hidden selected>{{$edits->yoqilgi_turi}}</option>
                         <option value="benzin">Benzin</option>
                         <option value="dezil">Dezil</option>
                         <option value="spg">SPG</option>
@@ -146,8 +145,8 @@
                     </div>
                     <div class="col-3"></div>
                 </div>
-
-                <div id="spg" class="show mt-5">
+                @if($edits->yoqilgi_turi =='spg' || $edits->yoqilgi_turi == 'smg')
+                <div id="spg" class=" mt-5">
                     <!-- <h3>Gaz malumotlari</h3> -->
                     <div class="row  "  >
                         <div class="col-3">
@@ -178,6 +177,7 @@
                     </div>
 
                 </div>
+                @endif
                 <div class="text-right mt-4">
                     <button type="submit" class="btn btn-success">Update</button>
                 </div>

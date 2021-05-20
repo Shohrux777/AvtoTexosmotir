@@ -32,7 +32,7 @@
                     <div class="col-4">
                         <label for="fish" class="form-label m-0 p-0">Familiyasi Ismi Sharifi</label>
                         <input type="text" class="form-control" id="fish" name="name" value="{{old('name')}}" placeholder="">
-                        <span style="color:red; font-size: 14px;">@error('name'){{$message}} @enderror</span>
+                        <span style="color:red; font-size: 14px;">@error('name'){{'F.I.O kiriting'}} @enderror</span>
 
                     </div>
                     <div class="col-2">

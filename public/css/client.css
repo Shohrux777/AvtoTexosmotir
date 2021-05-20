@@ -68,3 +68,24 @@ label {
 .listMain .table tr {
     cursor: pointer;
 }
+
+.print .title p {
+    font-size: 18px;
+}
+
+.print .title h3 {
+    font-weight: 550;
+}
+
+.print .title h5 {
+    font-weight: 520;
+}
+
+.print span {
+    font-weight: bold;
+}
+
+.print .main p {
+    font-size: 18px;
+    line-height: 38px;
+}

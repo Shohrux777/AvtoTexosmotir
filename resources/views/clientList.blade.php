@@ -56,8 +56,8 @@
                         <td>{{$client['t_number']}}</td>
                         <td>none</td>
                         <td>
-                        <i class="fas fa-eye"></i>
-                        <i class="fas fa-print"></i>
+                        <a href="showClients/{{$client->id}}"><i class="fas fa-eye"></i></a>
+                        <a href="/print/{{$client->id}}"><i class="fas fa-print"></i></a>
                         <a href="/editClient/{{$client->id}}"><i class="fas fa-pen"></i></a>
                         </td>
                     </tr>
