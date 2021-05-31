@@ -1,6 +1,6 @@
 @extends('bootstrap')
 <link rel="stylesheet" href="{{url('css/client.css')}}">
-<script src="js/client.js"></script>
+<script src="{{url('js/client.js')}}"></script>
     <x-app-layout>
         <div class="list">
             <div class="list_title">

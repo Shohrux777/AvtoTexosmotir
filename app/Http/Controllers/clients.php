@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\listofclient;
 
 class clients extends Controller
 {
     //
     function index(){
-        return view('clients');
+        $data = DB::table('client')->orderBy('id', 'DESC')->first();
+        return view('clients', ['kod'=>$data]);
     }
     function addClient(Request $request){
         $request->validate([
@@ -19,7 +21,17 @@ class clients extends Controller
             'd_raqami'=>'required',
             'dv_raqami'=>'required',
             'kuzov'=>'required',
-            'sh_raqami'=>'required'
+            'sh_raqami'=>'required',
+            'rusumi'=>'required',
+            'model'=>'required',
+            'ishlab_sana'=>'required',
+            'yoqilgi_turi'=>'required',
+            'rangi'=>'required',
+            'ishlab_sana'=>'required',
+            'texnik_pass'=>'required',
+            'avto_turi'=>'required',
+            'tex_otgan_sana'=>'required',
+            't_number'=> 'required|regex:/^\d{9}$/'
         ]);
 
         $query = DB::table('client')->insert([
@@ -49,7 +61,7 @@ class clients extends Controller
 
         ]);
         if($query){
-            return back() ->with('success','Malumot ');
+            return back() ->with('success',"Malumot q'shildi");
         }
         else{
             return back() ->with('fail','Something went wrong');

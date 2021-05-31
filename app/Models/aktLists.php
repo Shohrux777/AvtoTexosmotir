@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class listofclient extends Model
+class aktLists extends Model
 {
-    protected $table = 'client';
+    protected $table = 'planshit';
+    use HasFactory;
 }
-
-

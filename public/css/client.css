@@ -7,7 +7,7 @@ label {
 }
 
 .list_title {
-    height: 100px;
+    height: 80px;
     background-color: #457ceb;
     color: white;
     display: flex;
@@ -60,7 +60,8 @@ label {
 }
 
 .listMain .table td i {
-    font-size: 11px;
+    font-size: 13px;
+    margin-left: 4px;
     cursor: pointer;
     color: rgb(80, 147, 255);
 }
@@ -88,4 +89,14 @@ label {
 .print .main p {
     font-size: 18px;
     line-height: 38px;
+}
+
+.print .raxbar p,
+.print .sana p {
+    font-size: 18px;
+}
+
+.print .izoh span {
+    font-size: 16px;
+    font-weight: bold;
 }

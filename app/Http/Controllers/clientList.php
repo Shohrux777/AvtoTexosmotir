@@ -8,8 +8,12 @@ use Illuminate\Http\Request;
 class clientList extends Controller
 {
     function list(){
-        $data = listofclient::all();
+        $data = listofclient::paginate(10);
         return view('clientList', ['clients'=>$data]);
+    }
+    function planshit(){
+        $data = listofclient::paginate(10);
+        return view('planshitList', ['plan_clients'=>$data]);
     }
     function EditClient($id){
         $edit = listofclient::all()-> where('id', $id)->first();
@@ -19,6 +23,10 @@ class clientList extends Controller
         $del = listofclient::find($id);
         $del ->delete();
         return redirect('clientList');
+    }
+    function plan_client($id){
+        $data = listofclient::find($id);
+        return view('planshit', ['plan_cli'=>$data]);
     }
     function printClient($id){
         $data = listofclient::find($id);
