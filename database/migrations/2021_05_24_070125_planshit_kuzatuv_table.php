@@ -94,7 +94,8 @@ class PlanshitKuzatuvTable extends Migration
             $table->string('status');
             $table->string('spidometr');
             $table->mediumText('imzo')->nullable();
-            $table->mediumText('rasm')->nullable();
+            $table->mediumText('ism_fam');
+            $table->string('pay')->nullable();
             $table->timestamps();
         });
     }

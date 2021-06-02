@@ -34,7 +34,9 @@ class clients extends Controller
             't_number'=> 'required|regex:/^\d{9}$/'
         ]);
 
+
         $query = DB::table('client')->insert([
+            'id'=>$request->input('id'),
             'code'=>$request->input('code'),
             'name'=>$request->input('name'),
             'sana'=>$request->input('sana'),
@@ -58,13 +60,21 @@ class clients extends Controller
             'gaz_ishlab_chiq'=>$request->input('gaz_ishlab_chiq'),
             'gaz_oxir_sana'=>$request->input('gaz_oxir_sana'),
             'oxirgi_tek'=>$request->input('oxirgi_tek'),
-
         ]);
         if($query){
-            return back() ->with('success',"Malumot q'shildi");
+            $data = DB::table('client')->orderBy('id', 'DESC')->first();
+            DB::table('plan')->insert([
+                'code'=>$data->id
+            ]);
+        }
+
+        if($query){
+            return back() ->with('success',"Malumot qo'shildi");
         }
         else{
             return back() ->with('fail','Something went wrong');
         }
+
+
     }
 }

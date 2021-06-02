@@ -24,7 +24,7 @@
             <form action="add" method="post" class="p-3 max-w-7xl mx-auto" style="height: 100vh;" >
 
             @csrf
-
+                <input type="text" class="form-control" hidden id="id"  name="id" placeholder="">
                 <div class="row">
                     <div class="col-1">
                     <label for="codes" class="form-label m-0 p-0">Code</label>
@@ -144,7 +144,7 @@
                     </div>
                     <div class="col-3">
                         <label for="telefon_nomeri" class="form-label m-0 p-0">Telefon nomeri</label>
-                        <input type="tel" max="9" class="form-control" id="telefon_nomeri" value="{{old('t_number')}}" name="t_number" placeholder="__ ___ __ __">
+                        <input type="tel" max="9" class="form-control" onkeyup="addComma(this)" id="telefon_nomeri" value="{{old('t_number')}}" name="t_number" placeholder="__ ___ __ __">
                         <span style="color:red; font-size: 14px;">@error('t_number'){{'Telifon nomer kiriting 9 talik'}} @enderror</span>
                     </div>
                     <div class="col-3">
@@ -198,5 +198,11 @@
     <script>
         let sana = document.getElementById('texnik_kurik_sana');
         sana.value = new Date().toISOString().substr(0, 10);
+
+        // let tel = document.getElementById('telefon_nomeri');
+        // function addComma(values) {
+        //     values.value = values.value.replace("-", "").replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+        // }
+
     </script>
 </x-app-layout>

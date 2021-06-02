@@ -2,17 +2,69 @@
 
 namespace App\Http\Controllers;
 use App\Models\listofclient;
+use App\Models\plan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class clientList extends Controller
 {
-    function list(){
-        $data = listofclient::paginate(10);
-        return view('clientList', ['clients'=>$data]);
+    function list(Request $request){
+        $named = $request->get('ism');
+        if($named){
+            $malum = listofclient::where('name','LIKE', '%'.$named.'%')->paginate(20);
+            return view('clientList', ['clients'=>$malum]);
+        }
+        else{
+            $data = listofclient::paginate(20);
+            return view('clientList', ['clients'=>$data]);
+        }
+
+    }
+    // function search_name(Request $request){
+    //     // $named = $_GET['ism'];
+    //     $named = $request->get('ism');
+    //     $malum = listofclient::where('name','LIKE', '%'.$named.'%')->paginate(20);
+    //     return view('clientList', ['clients'=>$malum]);
+    // }
+    function search_manzil(Request $request){
+        $named = $request->get('manzil');
+        $malum = listofclient::where('manzil','LIKE', '%'.$named.'%')->paginate(20);
+        return view('clientList', ['clients'=>$malum]);
+    }
+    function search_d_raqami(Request $request){
+        $named = $request->get('d_raqam');
+        $malum = listofclient::where('d_raqami','LIKE', '%'.$named.'%')->paginate(20);
+        return view('clientList', ['clients'=>$malum]);
+    }
+    function search_tel(Request $request){
+        $named = $request->get('tel');
+        $malum = listofclient::where('t_number','LIKE', '%'.$named.'%')->paginate(20);
+        return view('clientList', ['clients'=>$malum]);
+    }
+    function akt_name(Request $request){
+        // $named = $_GET['ism'];
+        $named = $request->get('ism');
+        $malum = listofclient::where('name','LIKE', '%'.$named.'%')->paginate(20);
+        return view('akt', ['lists'=>$malum]);
+    }
+    function akt_manzil(Request $request){
+        $named = $request->get('manzil');
+        $malum = listofclient::where('manzil','LIKE', '%'.$named.'%')->paginate(20);
+        return view('akt', ['lists'=>$malum]);
+    }
+    function akt_d_raqami(Request $request){
+        $named = $request->get('d_raqam');
+        $malum = listofclient::where('d_raqami','LIKE', '%'.$named.'%')->paginate(20);
+        return view('akt', ['lists'=>$malum]);
+    }
+    function akt_tel(Request $request){
+        $named = $request->get('tel');
+        $malum = listofclient::where('t_number','LIKE', '%'.$named.'%')->paginate(20);
+        return view('akt', ['lists'=>$malum]);
     }
     function planshit(){
-        $data = listofclient::paginate(10);
+        $data = plan::join('client','plan.code','=','client.id')
+        ->paginate(20);
         return view('planshitList', ['plan_clients'=>$data]);
     }
     function EditClient($id){
@@ -21,6 +73,8 @@ class clientList extends Controller
     }
     function deleteClient($id){
         $del = listofclient::find($id);
+        $delete = plan::all()-> where('code', $id)->first();
+        $delete -> delete();
         $del ->delete();
         return redirect('clientList');
     }

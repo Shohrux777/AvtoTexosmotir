@@ -504,7 +504,7 @@
             WinPrint.print()
             setTimeout(function () {
                 WinPrint.close()
-      }, 1000)
+            }, 1000)
         }
     </script>
 </x-app-layout>

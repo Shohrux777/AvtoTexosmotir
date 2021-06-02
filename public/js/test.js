@@ -200,6 +200,10 @@ function func() {
     if (document.getElementById('sng_propan2').checked == true) {
         s += '3.11 ';
     }
+    if (s.length() > 0) {
+        s += 't';
+    }
+    console.log(s);
     document.getElementById('status_by_natija').setAttribute('value', s);
     console.log(s);
 }

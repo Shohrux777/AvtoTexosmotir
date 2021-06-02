@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use App\Models\plan;
 
-
+use App\Models\File;
 use Illuminate\Http\Request;
 
 class planshit extends Controller
@@ -28,7 +29,20 @@ class planshit extends Controller
             'boshqar_org_kuch'=>'required',
             'status_natija'=> 'required'
         ]);
-
+            // $images=array();
+            $id_data=$request->input('users_id');
+            if($files=$request->file('images')){
+                foreach($files as $file){
+                    $name=$file->getClientOriginalName();
+                    $file->move('image',$name);
+                    // $images[]=$name;
+                    DB::table('img')->insert([
+                        'id'=>$id_data,
+                        'image'=>$name
+                    ]);
+                }
+            }
+            // $json_array = json_encode($images);
         $query = DB::table('planshit')->insert([
             'users_id'=>$request->input('users_id'),
             'dav_raq_bel'=>$request->input('dav_raq_bel'),
@@ -107,8 +121,13 @@ class planshit extends Controller
             'sng_propan'=>$request->input('sng_propan'),
             'spidometr'=>$request->input('spidometr'),
             'status'=>$request->input('status_natija'),
-
+            'ism_fam'=>$request->input('driver'),
         ]);
+        if($query){
+            $id = $request->input('users_id');
+            $delete = plan::all()-> where('code', $id)->first();
+            $delete -> delete();
+        }
         if($query){
             return redirect('planshitList');
         }

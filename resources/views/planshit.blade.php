@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <form action="/add_planshit" method="post" class="planshit_question">
+                <form action="/add_planshit"  method="post" enctype="multipart/form-data" class="planshit_question">
                     @csrf
                     <div class="text-center mb-3">
                         <h3>1-ПОСТ</h3>
@@ -53,13 +53,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" checked type="radio" value="true" name="dav_raq_bel" id="dav_raq_bel1">
+                            <input class="form-check-input" checked type="radio" value="t" {{ old('dav_raq_bel')== "t" ? 'checked' : '' }} name="dav_raq_bel" id="dav_raq_bel1">
                             <label class="form-check-label" for="dav_raq_bel1">
                                 Тўғри
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="dav_raq_bel" id="dav_raq_bel2" >
+                            <input class="form-check-input" type="radio" value="f" {{ old('dav_raq_bel')== "f" ? 'checked' : '' }} name="dav_raq_bel" id="dav_raq_bel2" >
                             <label class="form-check-label" for="dav_raq_bel2">
                                 Нотўғри
                             </label>
@@ -73,13 +73,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="aptechka" id="aptechka1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('aptechka')== "t" ? 'checked' : '' }} name="aptechka" id="aptechka1" checked>
                             <label class="form-check-label" for="aptechka1">
                                 Бор
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="aptechka" id="aptechka2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('aptechka')== "f" ? 'checked' : '' }} name="aptechka" id="aptechka2" >
                             <label class="form-check-label" for="aptechka2">
                                 Йуқ
                             </label>
@@ -94,13 +94,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="ogon" id="ogon1">
+                            <input class="form-check-input" value="t" type="radio" {{ old('ogon')== "t" ? 'checked' : '' }} name="ogon" checked id="ogon1">
                             <label class="form-check-label" for="ogon1">
                                 Бор
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="ogon" id="ogon2" checked>
+                            <input class="form-check-input" value="f" type="radio" {{ old('ogon')== "f" ? 'checked' : '' }} name="ogon" id="ogon2" >
                             <label class="form-check-label" for="ogon2">
                                 Йуқ
                             </label>
@@ -114,13 +114,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="znak" id="znak1">
+                            <input class="form-check-input" value="t" {{ old('znak')== "t" ? 'checked' : '' }} type="radio" checked name="znak" id="znak1">
                             <label class="form-check-label" for="znak1">
                                 Бор
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="znak" id="znak2" checked>
+                            <input class="form-check-input" value="f" {{ old('znak')== "f" ? 'checked' : '' }} type="radio" name="znak" id="znak2" >
                             <label class="form-check-label" for="znak2">
                                 Йуқ
                             </label>
@@ -134,13 +134,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="urindiq" id="urindiq1">
+                            <input class="form-check-input" value="t" {{ old('urindiq')== "t" ? 'checked' : '' }} type="radio" checked name="urindiq" id="urindiq1">
                             <label class="form-check-label" for="urindiq1">
                                 Cоз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="urindiq" id="urindiq2" checked>
+                            <input class="form-check-input" value="f" {{ old('urindiq')== "f" ? 'checked' : '' }} type="radio" name="urindiq" id="urindiq2" >
                             <label class="form-check-label" for="urindiq2">
                                 Носоз
                             </label>
@@ -154,13 +154,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="remen" id="remen1">
+                            <input class="form-check-input" value="t" {{ old('remen')== "t" ? 'checked' : '' }} checked type="radio" name="remen" id="remen1">
                             <label class="form-check-label" for="remen1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="remen" id="remen2" checked>
+                            <input class="form-check-input" value="f" {{ old('remen')== "f" ? 'checked' : '' }} type="radio" name="remen" id="remen2" >
                             <label class="form-check-label" for="remen2">
                                 Носоз
                             </label>
@@ -174,13 +174,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="bakavoy" id="bakavoy1">
+                            <input class="form-check-input" value="t" {{ old('bakavoy')== "t" ? 'checked' : '' }} type="radio" checked name="bakavoy" id="bakavoy1">
                             <label class="form-check-label" for="bakavoy1">
                                 Мавжуд
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="bakavoy" id="bakavoy2" checked>
+                            <input class="form-check-input" value="f" {{ old('bakavoy')== "f" ? 'checked' : '' }} type="radio" name="bakavoy" id="bakavoy2">
                             <label class="form-check-label" for="bakavoy2">
                                 Мавжуд емас
                             </label>
@@ -195,13 +195,13 @@
                         <div class="ml-4  javob">
                             <div class="d-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" value="false" type="radio" name="qushimcha" id="qushimcha1">
+                                    <input class="form-check-input" value="f" {{ old('qushimcha')== "f" ? 'checked' : '' }} type="radio" name="qushimcha" id="qushimcha1">
                                     <label class="form-check-label" for="qushimcha1">
                                         Мавжуд
                                     </label>
                                 </div>
                                 <div class="form-check ml-3">
-                                    <input class="form-check-input" value="true" type="radio" name="qushimcha" id="qushimcha2" checked>
+                                    <input class="form-check-input" value="t" {{ old('qushimcha')== "t" ? 'checked' : '' }} type="radio" name="qushimcha" id="qushimcha2" checked>
                                     <label class="form-check-label" for="qushimcha2">
                                         Мавжуд емас
                                     </label>
@@ -209,7 +209,7 @@
                             </div>
                             <div class=" mt-2 d-flex">
                                 <label for="plyonka">Плёнканинг размери:</label>
-                                <input type="text"  class="form-control ml-2" name="plyonka_size" min="0" style="width:75px; height: 25px;" id="plyonka" placeholder="...см">
+                                <input type="text"  class="form-control ml-2" value="{{old('plyonka_size')}}" name="plyonka_size" min="0" style="width:75px; height: 25px;" id="plyonka" placeholder="...см">
                                 <span style="color:red; font-size: 14px;">@error('plyonka_size'){{'Empty'}} @enderror</span>
                             </div>
                         </div>
@@ -221,13 +221,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="false" type="radio" name="treshina_peshoyna" id="treshina_peshoyna1">
+                            <input class="form-check-input" value="f" {{ old('treshina_peshoyna')== "f" ? 'checked' : '' }} type="radio" name="treshina_peshoyna" id="treshina_peshoyna1">
                             <label class="form-check-label" for="treshina_peshoyna1">
                                 Бор
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="true" type="radio" name="treshina_peshoyna" id="treshina_peshoyna2" checked>
+                            <input class="form-check-input" value="t" {{ old('treshina_peshoyna')== "t" ? 'checked' : '' }} type="radio" name="treshina_peshoyna" id="treshina_peshoyna2" checked>
                             <label class="form-check-label" for="treshina_peshoyna2">
                                 Йуқ
                             </label>
@@ -243,13 +243,13 @@
                                 <div class="d-flex">
                                     <label for="">Cув пуркагич: </label>
                                     <div class="form-check ml-3">
-                                    <input class="form-check-input" value="true" type="radio" name="suv_puflagich" id="suv_puflagich1">
+                                    <input class="form-check-input" value="t" {{ old('suv_puflagich')== "t" ? 'checked' : '' }} type="radio" name="suv_puflagich" id="suv_puflagich1" checked>
                                     <label class="form-check-label" for="suv_puflagich1">
                                         Бор
                                     </label>
                                     </div>
                                     <div class="form-check ml-3">
-                                    <input class="form-check-input"value="false" type="radio" name="suv_puflagich" id="suv_puflagich2" checked>
+                                    <input class="form-check-input"value="f" {{ old('suv_puflagich')== "f" ? 'checked' : '' }} type="radio" name="suv_puflagich" id="suv_puflagich2">
                                     <label class="form-check-label" for="suv_puflagich2">
                                         Йуқ
                                     </label>
@@ -258,13 +258,13 @@
                                 <div class="d-flex">
                                     <label for="">Cоябон:</label>
                                     <div class="form-check ml-3">
-                                    <input class="form-check-input" value="true" type="radio" name="soyabon" id="soyabon1">
+                                    <input class="form-check-input" value="t" {{ old('soyabon')== "t" ? 'checked' : '' }} type="radio" name="soyabon" id="soyabon1" checked>
                                     <label class="form-check-label" for="soyabon1">
                                         Бор
                                     </label>
                                     </div>
                                     <div class="form-check ml-3">
-                                    <input class="form-check-input" value="false" type="radio" name="soyabon" id="soyabon2" checked>
+                                    <input class="form-check-input" value="f" {{ old('soyabon')== "f" ? 'checked' : '' }} type="radio" name="soyabon" id="soyabon2">
                                     <label class="form-check-label" for="soyabon2">
                                         Йуқ
                                     </label>
@@ -279,13 +279,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="shina_talab" id="shina_talab1">
+                            <input class="form-check-input" value="t" {{ old('shina_talab')== "t" ? 'checked' : '' }} type="radio" name="shina_talab" checked id="shina_talab1">
                             <label class="form-check-label" for="shina_talab1">
                                 Мувофиқ
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="shina_talab" id="shina_talab2" checked>
+                            <input class="form-check-input" value="f" {{ old('shina_talab')== "f" ? 'checked' : '' }} type="radio" name="shina_talab" id="shina_talab2">
                             <label class="form-check-label" for="shina_talab2">
                                 Номувофиқ
                             </label>
@@ -299,13 +299,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" value="true" type="radio" name="gayka_bulit" id="gayka_bulit1">
+                                <input class="form-check-input" value="t" {{ old('gayka_bulit')== "t" ? 'checked' : '' }} type="radio" checked name="gayka_bulit" id="gayka_bulit1">
                                 <label class="form-check-label" for="gayka_bulit1">
                                     Мавжуд
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" value="false" type="radio" name="gayka_bulit" id="gayka_bulit2" checked>
+                                <input class="form-check-input" value="f" {{ old('gayka_bulit')== "f" ? 'checked' : '' }} type="radio" name="gayka_bulit" id="gayka_bulit2">
                                 <label class="form-check-label" for="gayka_bulit2">
                                     Мавжуд емас
                                 </label>
@@ -319,13 +319,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="false" type="radio" name="treshina" id="treshina1">
+                            <input class="form-check-input" value="f" {{ old('treshina')== "f" ? 'checked' : '' }} type="radio" name="treshina" id="treshina1">
                             <label class="form-check-label" for="treshina1">
                                 Бор
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="true" type="radio" name="treshina" id="treshina2" checked>
+                            <input class="form-check-input" value="t" {{ old('treshina')== "t" ? 'checked' : '' }} type="radio" name="treshina" id="treshina2" checked>
                             <label class="form-check-label" for="treshina2">
                                 Йуқ
                             </label>
@@ -339,13 +339,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" value="false" type="radio" name="disk_qotirish" id="disk_qotirish1">
+                                <input class="form-check-input" value="f" {{ old('disk_qotirish')== "f" ? 'checked' : '' }} type="radio" name="disk_qotirish" id="disk_qotirish1">
                                 <label class="form-check-label" for="disk_qotirish1">
                                     Мавжуд
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" value="true" type="radio" name="disk_qotirish" id="disk_qotirish2" checked>
+                                <input class="form-check-input" value="t" {{ old('disk_qotirish')== "t" ? 'checked' : '' }} type="radio" name="disk_qotirish" id="disk_qotirish2" checked>
                                 <label class="form-check-label" for="disk_qotirish2">
                                     Мавжуд емас
                                 </label>
@@ -360,13 +360,13 @@
                         <div class="ml-4  javob">
                             <div class="d-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" value="false" type="radio" name="shina" id="shina1">
+                                    <input class="form-check-input" value="f" {{ old('shina')== "f" ? 'checked' : '' }} type="radio" name="shina" id="shina1">
                                     <label class="form-check-label" for="shina1">
                                         Нуқсонлар мавжуд
                                     </label>
                                 </div>
                                 <div class="form-check ml-3">
-                                    <input class="form-check-input" value="true" type="radio" name="shina" id="shina2" checked>
+                                    <input class="form-check-input" value="t" {{ old('shina')== "t" ? 'checked' : '' }} type="radio" name="shina" id="shina2" checked>
                                     <label class="form-check-label" for="shina2">
                                         Нуқсонлар мавжуд емас
                                     </label>
@@ -374,7 +374,7 @@
                             </div>
                             <div class=" mt-2 d-flex">
                                 <label for="shina_ulcham">Шина ўлчамлари:</label>
-                                <input type="text"  class="form-control ml-3" name="shinalar_ulcham" style="width:75px; height: 25px;" id="shina_ulcham" placeholder="...мм">
+                                <input type="text"  class="form-control ml-3" name="shinalar_ulcham" value="{{old('shinalar_ulcham')}}" style="width:75px; height: 25px;" id="shina_ulcham" placeholder="...мм">
                                 <span style="color:red; font-size: 14px;">@error('shinalar_ulcham'){{'Empty'}} @enderror</span>
                             </div>
                         </div>
@@ -386,13 +386,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" value="true" type="radio" name="gildirak_bosim" id="gildirak_bosim1">
+                                <input class="form-check-input" value="t" {{ old('gildirak_bosim')== "t" ? 'checked' : '' }} type="radio"  checked name="gildirak_bosim" id="gildirak_bosim1">
                                 <label class="form-check-label" for="gildirak_bosim1">
                                     Бирхил
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" value="false" type="radio" name="gildirak_bosim" id="gildirak_bosim2" checked>
+                                <input class="form-check-input" value="f" {{ old('gildirak_bosim')== "f" ? 'checked' : '' }} type="radio" name="gildirak_bosim" id="gildirak_bosim2">
                                 <label class="form-check-label" for="gildirak_bosim2">
                                     Бирхил емас
                                 </label>
@@ -406,13 +406,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check ">
-                            <input class="form-check-input" type="radio" value="true" name="uzoq_chiroq_soz" id="uzoq_chiroq_soz1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('uzoq_chiroq_soz')== "t" ? 'checked' : '' }} name="uzoq_chiroq_soz" checked id="uzoq_chiroq_soz1">
                             <label class="form-check-label" for="uzoq_chiroq_soz1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="uzoq_chiroq_soz" id="uzoq_chiroq_soz2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('uzoq_chiroq_soz')== "f" ? 'checked' : '' }} name="uzoq_chiroq_soz" id="uzoq_chiroq_soz2">
                             <label class="form-check-label" for="uzoq_chiroq_soz2">
                                 Носоз
                             </label>
@@ -426,13 +426,13 @@
                         </div>
                         <div class="d-flex ml-4 javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="yaqin_chiroq_soz" id="yaqin_chiroq_soz1">
+                            <input class="form-check-input" value="t" {{ old('yaqin_chiroq_soz')== "t" ? 'checked' : '' }} type="radio" checked  name="yaqin_chiroq_soz" id="yaqin_chiroq_soz1">
                             <label class="form-check-label" for="yaqin_chiroq_soz1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="yaqin_chiroq_soz" id="yaqin_chiroq_soz2" checked>
+                            <input class="form-check-input" value="f" {{ old('yaqin_chiroq_soz')== "f" ? 'checked' : '' }} type="radio" name="yaqin_chiroq_soz" id="yaqin_chiroq_soz2">
                             <label class="form-check-label" for="yaqin_chiroq_soz2">
                                 Носоз
                             </label>
@@ -447,13 +447,13 @@
                         <div class=" ml-4  javob">
                             <div class="d-flex">
                                 <div class="form-check">
-                                <input class="form-check-input" value="true" type="radio" name="old_tuman_chiroq_bor" id="old_tuman_chiroq_bor1">
+                                <input class="form-check-input" value="t" {{ old('old_tuman_chiroq_bor')== "t" ? 'checked' : '' }} type="radio" name="old_tuman_chiroq_bor" checked id="old_tuman_chiroq_bor1">
                                 <label class="form-check-label" for="old_tuman_chiroq_bor1">
                                     Бор
                                 </label>
                                 </div>
                                 <div class="form-check ml-3">
-                                <input class="form-check-input" value="false" type="radio" name="old_tuman_chiroq_bor" id="old_tuman_chiroq_bor2" checked>
+                                <input class="form-check-input" value="f" {{ old('old_tuman_chiroq_bor')== "f" ? 'checked' : '' }} type="radio" name="old_tuman_chiroq_bor" id="old_tuman_chiroq_bor2">
                                 <label class="form-check-label" for="old_tuman_chiroq_bor2">
                                     Йуқ
                                 </label>
@@ -461,13 +461,13 @@
                             </div>
                             <div  class="d-flex mt-2">
                                 <div class="form-check ">
-                                <input class="form-check-input" type="radio" value="true" name="old_tuman_chiroq_soz" id="old_tuman_chiroq_soz1">
+                                <input class="form-check-input" type="radio" value="t" {{ old('old_tuman_chiroq_soz')== "t" ? 'checked' : '' }} name="old_tuman_chiroq_soz" checked id="old_tuman_chiroq_soz1">
                                 <label class="form-check-label" for="old_tuman_chiroq_soz1">
                                     Соз
                                 </label>
                                 </div>
                                 <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="false" name="old_tuman_chiroq_soz" id="old_tuman_chiroq_soz2" checked>
+                                <input class="form-check-input" type="radio" value="f" {{ old('old_tuman_chiroq_soz')== "f" ? 'checked' : '' }} name="old_tuman_chiroq_soz" id="old_tuman_chiroq_soz2">
                                 <label class="form-check-label" for="old_tuman_chiroq_soz2">
                                     Носоз
                                 </label>
@@ -482,13 +482,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check ">
-                            <input class="form-check-input" type="radio" value="true" name="ort_har_chiroq_soz" id="ort_har_chiroq_soz1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('ort_har_chiroq_soz')== "t" ? 'checked' : '' }} checked name="ort_har_chiroq_soz" id="ort_har_chiroq_soz1">
                             <label class="form-check-label" for="ort_har_chiroq_soz1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="ort_har_chiroq_soz" id="ort_har_chiroq_soz2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('ort_har_chiroq_soz')== "f" ? 'checked' : '' }} name="ort_har_chiroq_soz" id="ort_har_chiroq_soz2">
                             <label class="form-check-label" for="ort_har_chiroq_soz2">
                                 Носоз
                             </label>
@@ -502,13 +502,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="burilish_chiroq_soz" id="burilish_chiroq_soz1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('burilish_chiroq_soz')== "t" ? 'checked' : '' }} name="burilish_chiroq_soz"  checked id="burilish_chiroq_soz1">
                             <label class="form-check-label" for="burilish_chiroq_soz1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="burilish_chiroq_soz" id="burilish_chiroq_soz2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('burilish_chiroq_soz')== "f" ? 'checked' : '' }} name="burilish_chiroq_soz" id="burilish_chiroq_soz2">
                             <label class="form-check-label" for="burilish_chiroq_soz2">
                                 Носоз
                             </label>
@@ -522,13 +522,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check ">
-                            <input class="form-check-input" value="true" type="radio" name="avarinka_chiroq_soz" id="avarinka_chiroq_soz1">
+                            <input class="form-check-input" value="t" {{ old('avarinka_chiroq_soz')== "t" ? 'checked' : '' }} type="radio" name="avarinka_chiroq_soz" checked id="avarinka_chiroq_soz1">
                             <label class="form-check-label" for="avarinka_chiroq_soz1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="avarinka_chiroq_soz" id="avarinka_chiroq_soz2" checked>
+                            <input class="form-check-input" value="f" {{ old('avarinka_chiroq_soz')== "f" ? 'checked' : '' }} type="radio" name="avarinka_chiroq_soz" id="avarinka_chiroq_soz2">
                             <label class="form-check-label" for="avarinka_chiroq_soz2">
                                 Носоз
                             </label>
@@ -542,13 +542,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check ">
-                            <input class="form-check-input" type="radio" value="true" name="gabarit_chiroq_soz" id="gabarit_chiroq_soz1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('gabarit_chiroq_soz')== "t" ? 'checked' : '' }} name="gabarit_chiroq_soz" checked id="gabarit_chiroq_soz1">
                             <label class="form-check-label" for="gabarit_chiroq_soz1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="gabarit_chiroq_soz" id="gabarit_chiroq_soz2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('gabarit_chiroq_soz')== "f" ? 'checked' : '' }} name="gabarit_chiroq_soz" id="gabarit_chiroq_soz2">
                             <label class="form-check-label" for="gabarit_chiroq_soz2">
                                 Носоз
                             </label>
@@ -562,25 +562,25 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="orqa_gabarit_chiroq_bor" id="orqa_gabarit_chiroq_bor1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('orqa_gabarit_chiroq_bor')== "t" ? 'checked' : '' }} name="orqa_gabarit_chiroq_bor" checked id="orqa_gabarit_chiroq_bor1">
                             <label class="form-check-label" for="orqa_gabarit_chiroq_bor1">
                                 Бор
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="orqa_gabarit_chiroq_bor" id="orqa_gabarit_chiroq_bor2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('orqa_gabarit_chiroq_bor')== "f" ? 'checked' : '' }} name="orqa_gabarit_chiroq_bor" id="orqa_gabarit_chiroq_bor2">
                             <label class="form-check-label" for="orqa_gabarit_chiroq_bor2">
                                 Йуқ
                             </label>
                             </div>
                             <div class="form-check ml-4">
-                            <input class="form-check-input" type="radio" value="true" name="orqa_gabarit_chiroq_soz" id="orqa_gabarit_chiroq_soz1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('orqa_gabarit_chiroq_soz')== "t" ? 'checked' : '' }} name="orqa_gabarit_chiroq_soz" checked id="orqa_gabarit_chiroq_soz1">
                             <label class="form-check-label" for="orqa_gabarit_chiroq_soz1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false"  name="orqa_gabarit_chiroq_soz" id="orqa_gabarit_chiroq_soz2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('orqa_gabarit_chiroq_soz')== "f" ? 'checked' : '' }}  name="orqa_gabarit_chiroq_soz" id="orqa_gabarit_chiroq_soz2">
                             <label class="form-check-label" for="orqa_gabarit_chiroq_soz2">
                                 Носоз
                             </label>
@@ -594,13 +594,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="true" name="xavf_yostiq" id="xavf_yostiq1">
+                                <input class="form-check-input" type="radio" value="t" {{ old('xavf_yostiq')== "t" ? 'checked' : '' }} checked name="xavf_yostiq" id="xavf_yostiq1">
                                 <label class="form-check-label" for="xavf_yostiq1">
                                     Мавжуд
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="false" name="xavf_yostiq" id="xavf_yostiq2" checked>
+                                <input class="form-check-input" type="radio" value="f" {{ old('xavf_yostiq')== "f" ? 'checked' : '' }} name="xavf_yostiq" id="xavf_yostiq2">
                                 <label class="form-check-label" for="xavf_yostiq2">
                                     Мавжуд емас
                                 </label>
@@ -614,13 +614,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="yorit_ogoh_mos" id="yorit_ogoh_mos1">
+                            <input class="form-check-input" value="t" {{ old('yorit_ogoh_mos')== "t" ? 'checked' : '' }} type="radio" name="yorit_ogoh_mos" checked id="yorit_ogoh_mos1">
                             <label class="form-check-label" for="yorit_ogoh_mos1">
                                 Мувофиқ
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="yorit_ogoh_mos" id="yorit_ogoh_mos2" checked>
+                            <input class="form-check-input" value="f" {{ old('yorit_ogoh_mos')== "f" ? 'checked' : '' }} type="radio" name="yorit_ogoh_mos" id="yorit_ogoh_mos2">
                             <label class="form-check-label" for="yorit_ogoh_mos2">
                                 Номувофиқ
                             </label>
@@ -634,13 +634,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="false" name="yorug_yunaltirgich" id="yorug_yunaltirgich1">
+                                <input class="form-check-input" type="radio" value="f" {{ old('yorug_yunaltirgich')== "f" ? 'checked' : '' }} name="yorug_yunaltirgich" id="yorug_yunaltirgich1">
                                 <label class="form-check-label" for="yorug_yunaltirgich1">
                                     Мавжуд
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="true" name="yorug_yunaltirgich" id="yorug_yunaltirgich2" checked>
+                                <input class="form-check-input" type="radio" value="t" {{ old('yorug_yunaltirgich')== "t" ? 'checked' : '' }} name="yorug_yunaltirgich" id="yorug_yunaltirgich2" checked>
                                 <label class="form-check-label" for="yorug_yunaltirgich2">
                                     Мавжуд емас
                                 </label>
@@ -654,13 +654,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="oyna_tozalagich" id="oyna_tozalagich1">
+                            <input class="form-check-input" value="t" {{ old('oyna_tozalagich')== "t" ? 'checked' : '' }} type="radio" checked name="oyna_tozalagich" id="oyna_tozalagich1">
                             <label class="form-check-label" for="oyna_tozalagich1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="oyna_tozalagich" id="oyna_tozalagich2" checked>
+                            <input class="form-check-input" value="f" {{ old('oyna_tozalagich')== "f" ? 'checked' : '' }} type="radio" name="oyna_tozalagich" id="oyna_tozalagich2">
                             <label class="form-check-label" for="oyna_tozalagich2">
                                 Носоз
                             </label>
@@ -674,13 +674,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="benzobak_yaroq" id="benzobak_yaroq1">
+                            <input class="form-check-input" value="t" {{ old('benzobak_yaroq')== "t" ? 'checked' : '' }} type="radio" name="benzobak_yaroq" checked id="benzobak_yaroq1">
                             <label class="form-check-label" for="benzobak_yaroq1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="benzobak_yaroq" id="benzobak_yaroq2" checked>
+                            <input class="form-check-input" value="f" {{ old('benzobak_yaroq')== "f" ? 'checked' : '' }} type="radio" name="benzobak_yaroq" id="benzobak_yaroq2">
                             <label class="form-check-label" for="benzobak_yaroq2">
                                 Носоз
                             </label>
@@ -694,13 +694,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" value="false" type="radio" name="chambarak_rul" id="chambarak_rul1">
+                                <input class="form-check-input" value="f" {{ old('chambarak_rul')== "f" ? 'checked' : '' }} type="radio" name="chambarak_rul" id="chambarak_rul1">
                                 <label class="form-check-label" for="chambarak_rul1">
                                     Мавжуд
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" value="true" type="radio" name="chambarak_rul" id="chambarak_rul2" checked>
+                                <input class="form-check-input" value="t" {{ old('chambarak_rul')== "t" ? 'checked' : '' }} type="radio" name="chambarak_rul" id="chambarak_rul2" checked>
                                 <label class="form-check-label" for="chambarak_rul2">
                                     Мавжуд емас
                                 </label>
@@ -714,13 +714,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="eshik_qulf" id="eshik_qulf1">
+                            <input class="form-check-input" value="t" {{ old('eshik_qulf')== "t" ? 'checked' : '' }} type="radio" name="eshik_qulf" checked id="eshik_qulf1">
                             <label class="form-check-label" for="eshik_qulf1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="eshik_qulf" id="eshik_qulf2" checked>
+                            <input class="form-check-input" value="f" {{ old('eshik_qulf')== "f" ? 'checked' : '' }} type="radio" name="eshik_qulf" id="eshik_qulf2">
                             <label class="form-check-label" for="eshik_qulf2">
                                 Носоз
                             </label>
@@ -734,13 +734,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" value="true" type="radio" name="bamper_egil_radius" id="bamper_egil_radius1">
+                                <input class="form-check-input" value="t" {{ old('bamper_egil_radius')== "t" ? 'checked' : '' }} type="radio" checked name="bamper_egil_radius" id="bamper_egil_radius1">
                                 <label class="form-check-label" for="bamper_egil_radius1">
                                     Мувофиқ
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" value="false" type="radio" name="bamper_egil_radius" id="bamper_egil_radius2" checked>
+                                <input class="form-check-input" value="f" {{ old('bamper_egil_radius')== "f" ? 'checked' : '' }} type="radio" name="bamper_egil_radius" id="bamper_egil_radius2">
                                 <label class="form-check-label" for="bamper_egil_radius2">
                                     Мувофиқ емас
                                 </label>
@@ -754,13 +754,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="false" name="elektr_tashqi_nuq" id="elektr_tashqi_nuq1">
+                                <input class="form-check-input" type="radio" value="f" {{ old('elektr_tashqi_nuq')== "f" ? 'checked' : '' }} name="elektr_tashqi_nuq" id="elektr_tashqi_nuq1">
                                 <label class="form-check-label" for="elektr_tashqi_nuq1">
                                     Мавжуд
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="true" name="elektr_tashqi_nuq" id="elektr_tashqi_nuq2" checked>
+                                <input class="form-check-input" type="radio" value="t" {{ old('elektr_tashqi_nuq')== "t" ? 'checked' : '' }} name="elektr_tashqi_nuq" id="elektr_tashqi_nuq2" checked>
                                 <label class="form-check-label" for="elektr_tashqi_nuq2">
                                     Мавжуд емас
                                 </label>
@@ -774,13 +774,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="true" name="aloxida_qism_kons" id="aloxida_qism_kons1">
+                                <input class="form-check-input" type="radio" value="t" {{ old('aloxida_qism_kons')== "t" ? 'checked' : '' }} name="aloxida_qism_kons" checked id="aloxida_qism_kons1">
                                 <label class="form-check-label" for="aloxida_qism_kons1">
                                     Махкамланган
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="false" name="aloxida_qism_kons" id="aloxida_qism_kons2" checked>
+                                <input class="form-check-input" type="radio" value="f" {{ old('aloxida_qism_kons')== "f" ? 'checked' : '' }} name="aloxida_qism_kons" id="aloxida_qism_kons2">
                                 <label class="form-check-label" for="aloxida_qism_kons2">
                                     Махкамланмаган
                                 </label>
@@ -794,13 +794,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="false" name="kuzov_zang" id="kuzov_zang1">
+                                <input class="form-check-input" type="radio" value="f" {{ old('kuzov_zang')== "f" ? 'checked' : '' }} name="kuzov_zang" id="kuzov_zang1">
                                 <label class="form-check-label" for="kuzov_zang1">
                                     Мавжуд
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="true" name="kuzov_zang" id="kuzov_zang2" checked>
+                                <input class="form-check-input" type="radio" value="t" {{ old('kuzov_zang')== "t" ? 'checked' : '' }} name="kuzov_zang" id="kuzov_zang2" checked>
                                 <label class="form-check-label" for="kuzov_zang2">
                                     Мавжуд емас
                                 </label>
@@ -814,13 +814,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="false" name="gulishetil_sinish" id="gulishetil_sinish1">
+                            <input class="form-check-input" type="radio" value="f" {{ old('gulishetil_sinish')== "f" ? 'checked' : '' }} name="gulishetil_sinish" id="gulishetil_sinish1">
                             <label class="form-check-label" for="gulishetil_sinish1">
                                 Мавжуд
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="true" name="gulishetil_sinish" id="gulishetil_sinish2" checked>
+                            <input class="form-check-input" type="radio" value="t" {{ old('gulishetil_sinish')== "t" ? 'checked' : '' }} name="gulishetil_sinish" checked id="gulishetil_sinish2">
                             <label class="form-check-label" for="gulishetil_sinish2">
                                 Мавжуд емас
                             </label>
@@ -834,13 +834,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="spidometr" id="spidometr1" checked>
+                            <input class="form-check-input" value="t" {{ old('spidometr')== "t" ? 'checked' : '' }} type="radio" name="spidometr" id="spidometr1" checked>
                             <label class="form-check-label" for="spidometr1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="spidometr" id="spidometr2" >
+                            <input class="form-check-input" value="f" {{ old('spidometr')== "f" ? 'checked' : '' }} type="radio" name="spidometr" id="spidometr2" >
                             <label class="form-check-label" for="spidometr2">
                                 Носоз
                             </label>
@@ -858,13 +858,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="rul_kalonka_soz" id="rul_kalonka_soz1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('rul_kalonka_soz')== "t" ? 'checked' : '' }} name="rul_kalonka_soz" checked id="rul_kalonka_soz1">
                             <label class="form-check-label" for="rul_kalonka_soz1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="rul_kalonka_soz" id="rul_kalonka_soz2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('rul_kalonka_soz')== "f" ? 'checked' : '' }} name="rul_kalonka_soz" id="rul_kalonka_soz2">
                             <label class="form-check-label" for="rul_kalonka_soz2">
                                 Носоз
                             </label>
@@ -878,13 +878,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="rul_kalonka_mexanizm" id="rul_kalonka_mexanizm1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('rul_kalonka_mexanizm')== "t" ? 'checked' : '' }} name="rul_kalonka_mexanizm" checked id="rul_kalonka_mexanizm1">
                             <label class="form-check-label" for="rul_kalonka_mexanizm1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="rul_kalonka_mexanizm" id="rul_kalonka_mexanizm2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('rul_kalonka_mexanizm')== "f" ? 'checked' : '' }} name="rul_kalonka_mexanizm" id="rul_kalonka_mexanizm2">
                             <label class="form-check-label" for="rul_kalonka_mexanizm2">
                                 Носоз
                             </label>
@@ -898,13 +898,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="rul_boshqaruv_miyor" id="rul_boshqaruv_miyor1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('rul_boshqaruv_miyor')== "t" ? 'checked' : '' }} name="rul_boshqaruv_miyor" checked id="rul_boshqaruv_miyor1">
                             <label class="form-check-label" for="rul_boshqaruv_miyor1">
                                 Мувофиқ
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="rul_boshqaruv_miyor" id="rul_boshqaruv_miyor2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('rul_boshqaruv_miyor')== "f" ? 'checked' : '' }} name="rul_boshqaruv_miyor" id="rul_boshqaruv_miyor2">
                             <label class="form-check-label" for="rul_boshqaruv_miyor2">
                                 Номувофиқ
                             </label>
@@ -918,13 +918,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="rul_kuchaytir_ish_qob" id="rul_kuchaytir_ish_qob1">
+                            <input class="form-check-input" value="t" {{ old('rul_kuchaytir_ish_qob')== "t" ? 'checked' : '' }} type="radio" name="rul_kuchaytir_ish_qob" checked id="rul_kuchaytir_ish_qob1">
                             <label class="form-check-label" for="rul_kuchaytir_ish_qob1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false" type="radio" name="rul_kuchaytir_ish_qob" id="rul_kuchaytir_ish_qob2" checked>
+                            <input class="form-check-input" value="f" {{ old('rul_kuchaytir_ish_qob')== "f" ? 'checked' : '' }} type="radio" name="rul_kuchaytir_ish_qob" id="rul_kuchaytir_ish_qob2">
                             <label class="form-check-label" for="rul_kuchaytir_ish_qob2">
                                 Носоз
                             </label>
@@ -938,13 +938,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="dvigat_ish_barqaror" id="dvigat_ish_barqaror1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('dvigat_ish_barqaror')== "t" ? 'checked' : '' }} name="dvigat_ish_barqaror" checked id="dvigat_ish_barqaror1">
                             <label class="form-check-label" for="dvigat_ish_barqaror1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="dvigat_ish_barqaror" id="dvigat_ish_barqaror2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('dvigat_ish_barqaror')== "f" ? 'checked' : '' }} name="dvigat_ish_barqaror" id="dvigat_ish_barqaror2">
                             <label class="form-check-label" for="dvigat_ish_barqaror2">
                                 Носоз
                             </label>
@@ -959,13 +959,13 @@
                         <div class=" ml-4  javob">
                             <div class="d-flex">
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" value="true" name="lift_cheg_qiymat" id="lift_cheg_qiymat1">
+                                <input class="form-check-input" type="radio" value="t" {{ old('lift_cheg_qiymat')== "t" ? 'checked' : '' }} name="lift_cheg_qiymat" checked id="lift_cheg_qiymat1">
                                 <label class="form-check-label" for="lift_cheg_qiymat1">
                                     Соз
                                 </label>
                                 </div>
                                 <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="false" name="lift_cheg_qiymat" id="lift_cheg_qiymat2" checked>
+                                <input class="form-check-input" type="radio" value="f" {{ old('lift_cheg_qiymat')== "f" ? 'checked' : '' }} name="lift_cheg_qiymat" id="lift_cheg_qiymat2">
                                 <label class="form-check-label" for="lift_cheg_qiymat2">
                                     Носоз
                                 </label>
@@ -973,7 +973,7 @@
                             </div>
                             <div class="mt-2 d-flex">
                                 <label for="lyuft">Люфт қиймати: </label>
-                                <input type="text" min="0"  class="form-control ml-3" name="lyuft_qiymat" style="width:75px; height: 25px;" id="lyuft" placeholder="...%">
+                                <input type="text" min="0"  class="form-control ml-3" value="{{old('lyuft_qiymat')}}" name="lyuft_qiymat" style="width:75px; height: 25px;" id="lyuft" placeholder="...%">
                                 <span style="color:red; font-size: 14px;">@error('lyuft_qiymat'){{'Empty'}} @enderror</span>
                             </div>
                         </div>
@@ -987,23 +987,23 @@
                             <label for="" class="font-weight-bold m-0 p-0">Бензин</label>
                             <div class=" d-flex">
                                 </span><label for="benzin_min">Юқори вал айланиш частотаси 2500 ... 2800 об мин: </label>
-                                <input type="text"  class="form-control ml-2" name="benzin_yuq_val_chas" style="width:75px; height: 25px;" id="benzin_min" placeholder="...0.7%">
+                                <input type="text"  class="form-control ml-2" value="{{old('benzin_yuq_val_chas')}}" name="benzin_yuq_val_chas" style="width:75px; height: 25px;" id="benzin_min" placeholder="...0.7%">
                                 <span style="color:red; font-size: 14px;">@error('benzin_yuq_val_chas'){{'Empty'}} @enderror</span>
                             </div>
                             <div class=" d-flex">
                                 <label for="benzin_max">Енг паст вал айланиш частотаси об мax: </label>
-                                <input type="text"  class="form-control ml-2"  name="benzin_pas_val_chas" style="width:75px; height: 25px;" id="benzin_max" placeholder="...1.0%">
+                                <input type="text"  class="form-control ml-2" value="{{old('benzin_pas_val_chas')}}"  name="benzin_pas_val_chas" style="width:75px; height: 25px;" id="benzin_max" placeholder="...1.0%">
                                 <span style="color:red; font-size: 14px;">@error('benzin_pas_val_chas'){{'Empty'}} @enderror</span>
                             </div>
                             <label for="" class="font-weight-bold m-0 p-0">Газ</label>
                             <div class=" d-flex">
                                 <label for="gaz_min">Юқори вал айланиш частотаси 2500 ... 2800 об мин: </label>
-                                <input type="text"  class="form-control ml-2"  name="gaz_yuq_val_chas" style="width:75px; height: 25px;" id="gaz_min" placeholder="...0.7%">
+                                <input type="text"  class="form-control ml-2" value="{{old('gaz_yuq_val_chas')}}" name="gaz_yuq_val_chas" style="width:75px; height: 25px;" id="gaz_min" placeholder="...0.7%">
                                 <span style="color:red; font-size: 14px;">@error('gaz_yuq_val_chas'){{'Empty'}} @enderror</span>
                             </div>
                             <div class=" d-flex">
                                 <label for="gaz_max">Енг паст вал айланиш частотаси об max: </label>
-                                <input type="text"  class="form-control ml-2" name="gaz_pas_val_chas" style="width:75px; height: 25px;" id="gaz_max" placeholder="...1.0%">
+                                <input type="text"  class="form-control ml-2" value="{{old('gaz_pas_val_chas')}}" name="gaz_pas_val_chas" style="width:75px; height: 25px;" id="gaz_max" placeholder="...1.0%">
                                 <span style="color:red; font-size: 14px;">@error('gaz_pas_val_chas'){{'Empty'}} @enderror</span>
                             </div>
                         </div>
@@ -1015,13 +1015,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="diel_gaz_tutun" id="diel_gaz_tutun1">
+                            <input class="form-check-input" value="t" {{ old('diel_gaz_tutun')== "t" ? 'checked' : '' }} type="radio" name="diel_gaz_tutun" checked id="diel_gaz_tutun1">
                             <label class="form-check-label" for="diel_gaz_tutun1">
                                 Мувофиқ
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" value="false"  type="radio" name="diel_gaz_tutun" id="diel_gaz_tutun2" checked>
+                            <input class="form-check-input" value="f" {{ old('diel_gaz_tutun')== "f" ? 'checked' : '' }}  type="radio" name="diel_gaz_tutun" id="diel_gaz_tutun2">
                             <label class="form-check-label" for="diel_gaz_tutun2">
                                 Номувофиқ
                             </label>
@@ -1036,12 +1036,12 @@
                         <div class=" ml-4  javob">
                             <div class=" d-flex">
                                 <label for="shovqin_tashqi">Ташқи шовқин: </label>
-                                <input type="text"  class="form-control ml-3" name="tashqi_shovqin" style="width:75px; height: 25px;" id="shovqin_tashqi" placeholder="...дБА">
+                                <input type="text"  class="form-control ml-3" value="{{old('tashqi_shovqin')}}" name="tashqi_shovqin" style="width:75px; height: 25px;" id="shovqin_tashqi" placeholder="...дБА">
                                 <span style="color:red; font-size: 14px;">@error('tashqi_shovqin'){{'Empty'}} @enderror</span>
                             </div>
                             <div class=" d-flex">
                                 <label for="shovqin_umumiy">Tashqi va Mashina shovqini: </label>
-                                <input type="text"  class="form-control ml-3" name="umumiy_shovqin" style="width:75px; height: 25px;" id="shovqin_umumiy" placeholder="...дБА">
+                                <input type="text"  class="form-control ml-3" value="{{old('umumiy_shovqin')}}" name="umumiy_shovqin" style="width:75px; height: 25px;" id="shovqin_umumiy" placeholder="...дБА">
                                 <span style="color:red; font-size: 14px;">@error('umumiy_shovqin'){{'Empty'}} @enderror</span>
                             </div>
                         </div>
@@ -1054,13 +1054,13 @@
                         <div class=" ml-4  javob">
                             <div class="d-flex">
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" value="true" name="ovozli_ogoh_quril" id="ovozli_ogoh_quril1">
+                                <input class="form-check-input" type="radio" value="t" {{ old('ovozli_ogoh_quril')== "t" ? 'checked' : '' }} name="ovozli_ogoh_quril"checked id="ovozli_ogoh_quril1">
                                 <label class="form-check-label" for="ovozli_ogoh_quril1">
                                     Мавжуд
                                 </label>
                                 </div>
                                 <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="false" name="ovozli_ogoh_quril" id="ovozli_ogoh_quril2" checked>
+                                <input class="form-check-input" type="radio" value="f" {{ old('ovozli_ogoh_quril')== "f" ? 'checked' : '' }} name="ovozli_ogoh_quril" id="ovozli_ogoh_quril2" >
                                 <label class="form-check-label" for="ovozli_ogoh_quril2">
                                     Мавжуд емас
                                 </label>
@@ -1068,7 +1068,7 @@
                             </div>
                             <div class="mt-2 d-flex">
                                 <label for="signal_qobl">Сигнал қобилия: </label>
-                                <input type="text"  class="form-control ml-3" name="signal_qobil" style="width:75px; height: 25px;" id="signal_qobl" placeholder="...дБА"><span>дБА</span>
+                                <input type="text"  class="form-control ml-3" name="signal_qobil" value="{{old('signal_qobil')}}" style="width:75px; height: 25px;" id="signal_qobl" placeholder="...дБА"><span>дБА</span>
                                 <span style="color:red; font-size: 14px;">@error('signal_qobil'){{'Empty'}} @enderror</span>
                             </div>
                         </div>
@@ -1085,13 +1085,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="tormoz_uzatish_qism" id="tormoz_uzatish_qism1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('tormoz_uzatish_qism')== "t" ? 'checked' : '' }} name="tormoz_uzatish_qism" checked id="tormoz_uzatish_qism1">
                             <label class="form-check-label" for="tormoz_uzatish_qism1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="tormoz_uzatish_qism" id="tormoz_uzatish_qism2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('tormoz_uzatish_qism')== "f" ? 'checked' : '' }} name="tormoz_uzatish_qism" id="tormoz_uzatish_qism2">
                             <label class="form-check-label" for="tormoz_uzatish_qism2">
                                 Носоз
                             </label>
@@ -1105,13 +1105,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="false" name="gildirak_tor_mex" id="gildirak_tor_mex1">
+                            <input class="form-check-input" type="radio" value="f" {{ old('gildirak_tor_mex')== "f" ? 'checked' : '' }} name="gildirak_tor_mex" id="gildirak_tor_mex1">
                             <label class="form-check-label" for="gildirak_tor_mex1">
                                 Мавжуд
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="true" name="gildirak_tor_mex" id="gildirak_tor_mex2" checked>
+                            <input class="form-check-input" type="radio" value="t" {{ old('gildirak_tor_mex')== "t" ? 'checked' : '' }} name="gildirak_tor_mex" id="gildirak_tor_mex2" checked>
                             <label class="form-check-label" for="gildirak_tor_mex2">
                                 Мавжуд емас
                             </label>
@@ -1125,13 +1125,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="false" name="bosim_tor_shikas" id="bosim_tor_shikas1">
+                            <input class="form-check-input" type="radio" value="f" {{ old('bosim_tor_shikas')== "f" ? 'checked' : '' }} name="bosim_tor_shikas" id="bosim_tor_shikas1">
                             <label class="form-check-label" for="bosim_tor_shikas1">
                                 Мавжуд
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="true" name="bosim_tor_shikas" id="bosim_tor_shikas2" checked>
+                            <input class="form-check-input" type="radio" value="t" {{ old('bosim_tor_shikas')== "t" ? 'checked' : '' }} name="bosim_tor_shikas" id="bosim_tor_shikas2" checked>
                             <label class="form-check-label" for="bosim_tor_shikas2">
                                 Мавжуд емас
                             </label>
@@ -1145,13 +1145,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="osma_uzat_kar" id="osma_uzat_kar1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('osma_uzat_kar')== "t" ? 'checked' : '' }} name="osma_uzat_kar" checked id="osma_uzat_kar1">
                             <label class="form-check-label" for="osma_uzat_kar1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="osma_uzat_kar" id="osma_uzat_kar2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('osma_uzat_kar')== "f" ? 'checked' : '' }} name="osma_uzat_kar" id="osma_uzat_kar2">
                             <label class="form-check-label" for="osma_uzat_kar2">
                                 Носоз
                             </label>
@@ -1165,13 +1165,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="tezla_spidometr" id="tezla_spidometr1">
+                            <input class="form-check-input" type="radio" value="t" {{ old('tezla_spidometr')== "t" ? 'checked' : '' }} name="tezla_spidometr" checked id="tezla_spidometr1">
                             <label class="form-check-label" for="tezla_spidometr1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="tezla_spidometr" id="tezla_spidometr2" checked>
+                            <input class="form-check-input" type="radio" value="f" {{ old('tezla_spidometr')== "f" ? 'checked' : '' }} name="tezla_spidometr" id="tezla_spidometr2">
                             <label class="form-check-label" for="tezla_spidometr2">
                                 Носоз
                             </label>
@@ -1187,24 +1187,24 @@
                             <div class="">
                                 <div class="d-flex align-items-center">
                                     <label for="tormoz_samara" class="m-0">Tормоз самарадорлиги: </label>
-                                    <input type="text"  class="form-control ml-3" name="tormoz_sam" style="width:75px; height: 25px;" id="tormoz_samara" placeholder="... Н">
+                                    <input type="text"  class="form-control ml-3" value="{{old('tormoz_sam')}}" name="tormoz_sam" style="width:75px; height: 25px;" id="tormoz_samara" placeholder="... Н">
                                     <span style="color:red; font-size: 14px;">@error('tormoz_sam'){{'Empty'}} @enderror</span>
                                 </div>
                                 <div class="mt-2 d-flex align-items-center">
                                     <label for="uq_barqaror" class="m-0">Ўқ барқарорлиги: </label>
-                                    <input type="text"  class="form-control ml-3" name="uq_barqar" style="width:75px; height: 25px;" id="uq_barqaror" placeholder="...%">
+                                    <input type="text"  class="form-control ml-3" value="{{old('uq_barqar')}}" name="uq_barqar" style="width:75px; height: 25px;" id="uq_barqaror" placeholder="...%">
                                     <span style="color:red; font-size: 14px;">@error('uq_barqar'){{'Empty'}} @enderror</span>
                                 </div>
                             </div>
                             <div class="d-flex mt-1">
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" value="true" name="tor_tizm_samara" id="tor_tizm_samara1">
+                                <input class="form-check-input" type="radio" value="t" {{ old('tor_tizm_samara')== "t" ? 'checked' : '' }} name="tor_tizm_samara" checked id="tor_tizm_samara1">
                                 <label class="form-check-label" for="tor_tizm_samara1">
                                     Соз
                                 </label>
                                 </div>
                                 <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="false" name="tor_tizm_samara" id="tor_tizm_samara2" checked>
+                                <input class="form-check-input" type="radio" value="f" {{ old('tor_tizm_samara')== "f" ? 'checked' : '' }} name="tor_tizm_samara" id="tor_tizm_samara2">
                                 <label class="form-check-label" for="tor_tizm_samara2">
                                     Носоз
                                 </label>
@@ -1221,24 +1221,24 @@
                             <div class="d-flex">
                                 <div class="d-flex align-items-center">
                                     <label for="birin_uq_buy_bar" class="m-0">1 - ўқ: </label>
-                                    <input type="text"  class="form-control ml-3" name="birinchi_uq_bar" style="width:75px; height: 25px;" id="birin_uq_buy_bar" placeholder="... %">
+                                    <input type="text"  class="form-control ml-3" name="birinchi_uq_bar" value="{{old('birinchi_uq_bar')}}" style="width:75px; height: 25px;" id="birin_uq_buy_bar" placeholder="... %">
                                     <span style="color:red; font-size: 14px;">@error('birinchi_uq_bar'){{'Empty'}} @enderror</span>
                                 </div>
                                 <div class="d-flex align-items-center">
                                     <label for="ikkinchi_uq_buy_bar" class="m-0 ml-3">2 -ўқ: </label>
-                                    <input type="text"  class="form-control ml-3" name="ikkinch_uq_bar" style="width:75px; height: 25px;" id="ikkinchi_uq_buy_bar" placeholder="... %">
+                                    <input type="text"  class="form-control ml-3" name="ikkinch_uq_bar" value="{{old('ikkinch_uq_bar')}}" style="width:75px; height: 25px;" id="ikkinchi_uq_buy_bar" placeholder="... %">
                                     <span style="color:red; font-size: 14px;">@error('ikkinch_uq_bar'){{'Empty'}} @enderror</span>
                                 </div>
                             </div>
                             <div class="d-flex flex-wrap mt-2">
                                 <div class="form-check ">
-                                <input class="form-check-input" type="radio" value="true" name="uq_by_barqa" id="uq_by_barqa1" checked>
+                                <input class="form-check-input" type="radio" value="t" {{ old('uq_by_barqa')== "t" ? 'checked' : '' }} name="uq_by_barqa" id="uq_by_barqa1" checked>
                                 <label class="form-check-label" for="uq_by_barqa1">
                                     Мувофиқ
                                 </label>
                                 </div>
                                 <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="false" name="uq_by_barqa" id="uq_by_barqa2" >
+                                <input class="form-check-input" type="radio" value="f"{{ old('uq_by_barqa')== "f" ? 'checked' : '' }} name="uq_by_barqa" id="uq_by_barqa2" >
                                 <label class="form-check-label" for="uq_by_barqa2">
                                     Мувофиқ емас
                                 </label>
@@ -1255,24 +1255,24 @@
                             <div class="d-flex flex-wrap">
                                 <div class="d-flex align-items-center">
                                     <label for="tormoz_sam" class="m-0 p-0">Tормоз самарадорлиги: </label>
-                                    <input type="text"  class="form-control ml-3" name="turar_tor_sam" style="width:75px; height: 25px;" id="tormoz_sam" placeholder="...">
+                                    <input type="text"  class="form-control ml-3" value="{{old('turar_tor_sam')}}" name="turar_tor_sam" style="width:75px; height: 25px;" id="tormoz_sam" placeholder="...">
                                     <span style="color:red; font-size: 14px;">@error('turar_tor_sam'){{'Empty'}} @enderror</span>
                                 </div>
                                 <div class="mt-1 ml-1 d-flex align-items-center">
                                     <label for="bosh_org_kuch" class="m-0 p-0">Бошқарув органидаги кучи: </label>
-                                    <input type="text"  class="form-control ml-3" name="boshqar_org_kuch" style="width:75px; height: 25px;" id="bosh_org_kuch" placeholder="...Н">
+                                    <input type="text"  class="form-control ml-3" value="{{old('boshqar_org_kuch')}}" name="boshqar_org_kuch" style="width:75px; height: 25px;" id="bosh_org_kuch" placeholder="...Н">
                                     <span style="color:red; font-size: 14px;">@error('boshqar_org_kuch'){{'Empty'}} @enderror</span>
                                 </div>
                             </div>
                             <div class="d-flex mt-1">
                                 <div class="form-check">
-                                <input class="form-check-input" type="radio" value="true" name="tormz_sam" id="tormz_sam1" checked>
+                                <input class="form-check-input" type="radio" value="t" {{ old('tormz_sam')== "t" ? 'checked' : '' }} name="tormz_sam" id="tormz_sam1" checked>
                                 <label class="form-check-label" for="tormz_sam1">
                                     Соз
                                 </label>
                                 </div>
                                 <div class="form-check ml-3">
-                                <input class="form-check-input" type="radio" value="false" name="tormz_sam" id="tormz_sam2" >
+                                <input class="form-check-input" type="radio" value="f" {{ old('tormz_sam')== "f" ? 'checked' : '' }} name="tormz_sam" id="tormz_sam2" >
                                 <label class="form-check-label" for="tormz_sam2">
                                     Носоз
                                 </label>
@@ -1287,13 +1287,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                                <input class="form-check-input" value="true" type="radio" name="gaz_balon_mavjud" id="gaz_balon_mavjud1">
+                                <input class="form-check-input" value="t" {{ old('gaz_balon_mavjud')== "t" ? 'checked' : '' }} type="radio" name="gaz_balon_mavjud" checked id="gaz_balon_mavjud1">
                                 <label class="form-check-label" for="gaz_balon_mavjud1">
                                     Мавжуд
                                 </label>
                             </div>
                             <div class="form-check ml-3">
-                                <input class="form-check-input" value="false" type="radio" name="gaz_balon_mavjud" id="gaz_balon_mavjud2" checked>
+                                <input class="form-check-input" value="f" {{ old('gaz_balon_mavjud')== "f" ? 'checked' : '' }} type="radio" name="gaz_balon_mavjud" id="gaz_balon_mavjud2">
                                 <label class="form-check-label" for="gaz_balon_mavjud2">
                                     Мавжуд емас
                                 </label>
@@ -1308,13 +1308,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" value="true" type="radio" name="stg_agregat" id="stg_agregat1" checked>
+                            <input class="form-check-input" value="t" {{ old('stg_agregat')== "t" ? 'checked' : '' }} type="radio" name="stg_agregat" id="stg_agregat1" checked>
                             <label class="form-check-label" for="stg_agregat1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="stg_agregat" id="stg_agregat2" >
+                            <input class="form-check-input" type="radio" value="f" {{ old('stg_agregat')== "f" ? 'checked' : '' }} name="stg_agregat" id="stg_agregat2" >
                             <label class="form-check-label" for="stg_agregat2">
                                 Носоз
                             </label>
@@ -1328,13 +1328,13 @@
                         </div>
                         <div class="d-flex ml-4  javob">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" value="true" name="sng_propan" id="sng_propan1" checked>
+                            <input class="form-check-input" type="radio" value="t" {{ old('sng_propan')== "t" ? 'checked' : '' }} name="sng_propan" id="sng_propan1" checked>
                             <label class="form-check-label" for="sng_propan1">
                                 Соз
                             </label>
                             </div>
                             <div class="form-check ml-3">
-                            <input class="form-check-input" type="radio" value="false" name="sng_propan" id="sng_propan2" >
+                            <input class="form-check-input" type="radio" value="f" {{ old('sng_propan')== "f" ? 'checked' : '' }} name="sng_propan" id="sng_propan2" >
                             <label class="form-check-label" for="sng_propan2">
                                 Носоз
                             </label>
@@ -1346,32 +1346,40 @@
 
                     <div class="imzolar w-100 mt-5">
                         <div class="d-flex mt-2">
-                            <div class="rahber w-50">
+                            <div class="rahber  d-flex align-items-center w-50">
                                 <h6>Лабаратория бошлиғи: </h6>
                             </div>
-                            <div class="imzo w-25"></div>
-                            <div class="imzo w-25"><h6>С.Ғ.Мамбитов</h6></div>
+                            <div class="imzo w-25">
+                                <img src="{{url('/images/imzo1.png')}}" class="img-fluid" style="height: 50px;" alt="">
+                            </div>
+                            <div class="imzo w-25  d-flex align-items-center"><h6>С.Ғ.Мамбитов</h6></div>
                         </div>
                         <div class="d-flex mt-2">
-                            <div class="rahber w-50">
+                            <div class="rahber  d-flex align-items-center w-50">
                                 <h6>Синовчи мухандис: </h6>
                             </div>
-                            <div class="imzo w-25"></div>
-                            <div class="imzo w-25"><h6>Ғ.М.Ситмбетов</h6></div>
+                            <div class="imzo w-25">
+                                <img src="{{url('/images/imzo2.png')}}" class="img-fluid" style="height: 50px;" alt="">
+                            </div>
+                            <div class="imzo  d-flex align-items-center w-25"><h6>Ғ.М.Ситмбетов</h6></div>
                         </div>
                         <div class="d-flex mt-2">
-                            <div class="rahber w-50">
+                            <div class="rahber  w-50 d-flex align-items-center">
                                 <h6>Синовчи техник: </h6>
                             </div>
-                            <div class="imzo w-25"></div>
-                            <div class="imzo w-25"><h6> О.Х.Сатторов</h6></div>
+                            <div class="imzo w-25">
+                                <img src="{{url('/images/imzo3.png')}}" class="img-fluid" style="height: 50px;" alt="">
+                            </div>
+                            <div class="imzo  d-flex align-items-center w-25"><h6> О.Х.Сатторов</h6></div>
                         </div>
                         <div class="d-flex mt-2">
                             <div class="rahber w-50 d-flex align-items-center">
                                 <h6>Синов натижалири билан танишдим </h6>
                             </div>
                             <div class="imzo w-25"></div>
-                            <div class="imzo w-25"><input type="text" class="form-control" id="name_driver" placeholder=""></div>
+                            <div class="imzo w-25">
+                                <input type="text" class="form-control" value="{{old('driver')}}" id="name_driver" name="driver" placeholder="">
+                            </div>
                         </div>
                     </div>
                     <div class="yuriqnoma mt-5">
@@ -1382,17 +1390,22 @@
                         <h6>ИЁД*****-Ички ёнилғи двигатели</h6>
                         <h6>ДРБ******- Давлат ракам белгиси</h6>
                     </div>
-                    <div>
-                        <input type="file" accept="image/*" id="file-input">
-                        <script>
-                        const fileInput = document.getElementById('file-input').value;
-                        document.getElementById('result').innerHTML =
-                        '<img src="'+fileInput+'">';
-                        fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
-                        </script>
-                    </div>
-                    <div id="result">
 
+                    <div class="container mt-5 w-100">
+                        <div class="shadow card w-100">
+                            <div class="card-header d-flex justify-content-between">
+                                <h4>Image Uploading</h4>
+                                <input type="file" name="images[]" multiple class="d-none" onchange="image_select()" id="image">
+                                <button class="btn btn-sm btn-primary" onclick="document.getElementById('image').click()" type="button" >Choose image</button>
+                            </div>
+                            <div class="card-body d-flex flex-wrap justify-content-center" id="container">
+                                <img src="" alt="">
+                                {{-- <div class="image_container d-flex justify-content-center position-relative">
+                                    <img src="`+ i.url +`" alt="Image">
+                                    <span class="position-absolute" onclick="delete_image(`+ images.indexOf(i) +`)">&times;</span>
+                                </div> --}}
+                            </div>
+                        </div>
                     </div>
 
 
@@ -1405,4 +1418,74 @@
             </div>
         </div>
     </div>
+    <style>
+        .image_container{
+            height: 170px;
+		 	width: 230px;
+		 	border-radius: 6px;
+		 	overflow: hidden;
+		 	margin: 10px;
+        }
+        .image_container img {
+		 	height: 100%;
+		 	width: auto;
+		 	object-fit: cover;
+		 }
+		 .image_container span {
+		 	top: -6px;
+		 	right: 8px;
+		 	color: red;
+		 	font-size: 28px;
+		 	font-weight: normal;
+		 	cursor: pointer;
+		 }
+    </style>
+    <script type="text/javascript">
+        var images = [];
+        function image_select() {
+   	  	  var image = document.getElementById('image').files;
+               console.log(image);
+               images = [];
+               console.log(images);
+   	  	  for (i = 0; i < image.length; i++) {
+   	  	  	  if (check_duplicate(image[i].name)) {
+                images.push({
+   	  	  	  	    "name" : image[i].name,
+   	  	  	  	    "url" : URL.createObjectURL(image[i]),
+   	  	  	  	    "file" : image[i],
+   	  	  	    })
+   	  	  	  } else
+   	  	  	  {
+   	  	  	  	 alert(image[i].name + " is already added to the list");
+   	  	  	  }
+   	  	  }
+   	  	//   document.getElementById('form').reset();
+   	  	  document.getElementById('container').innerHTML = image_show();
+   	    }
+        function image_show() {
+            var image = "";
+            images.forEach((i) => {
+                image += `<div class="image_container d-flex justify-content-center position-relative">
+                    <img src="`+ i.url +`" alt="Image">
+                </div>`;
+            })
+            return image;
+        }
+        function delete_image(e) {
+            images.splice(e, 1);
+            document.getElementById('container').innerHTML = image_show();
+        }
+        function check_duplicate(name) {
+            var image = true;
+            if (images.length > 0) {
+                for (e = 0; e < images.length; e++) {
+                    if (images[e].name == name) {
+                        image = false;
+                        break;
+                    }
+                }
+            }
+            return image;
+        }
+    </script>
 </x-app-layout>
